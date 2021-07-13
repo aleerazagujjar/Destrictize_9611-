@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export CC_PATH=/disk/Kernel/Toolchain/clang-4639204/bin/clang
-export CROSS_COMPILE_PATH=/disk/Kernel/Toolchain/gcc-4.9-64/bin/aarch64-linux-android-
+export CC_PATH=${HOME}/clang-4639204/bin/clang
+export CROSS_COMPILE_PATH=${HOME}/gcc49-64/bin/aarch64-linux-android-
 USE_CLANG_TRIPLE=1
 
 BUILD_COMMAND=()
