@@ -15,7 +15,7 @@ build_defconfig() {
 	for i in arch/arm64/configs/*; do
 		i=${i##*/}
 		for defconfig in $i; do
-			${BUILD_COMMAND[@]} O=out/${i%_*}
+			${BUILD_COMMAND[@]} O=out/${i%_*} $i
 		done
 	done
 }

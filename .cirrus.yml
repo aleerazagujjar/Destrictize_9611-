@@ -1,0 +1,17 @@
+env:
+  CIRRUS_WORKING_DIR: "$HOME/kernel"
+  CIRRUS_CLONE_DEPTH: 1
+
+task:
+  name: Destrictize_9611-build
+  timeout_in: 120m
+  container:
+    image: hendramanu/docker-image:latest
+    cpu: 8
+    memory: 8G
+
+  prepare_source_script:
+    - make clean
+    - make mrproper
+  build_script:
+    - ./build.sh
