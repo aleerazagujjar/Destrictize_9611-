@@ -2,6 +2,7 @@
 
 export CC_PATH=${HOME}/clang-4639204/bin/clang
 export CROSS_COMPILE_PATH=${HOME}/gcc49-64/bin/aarch64-linux-android-
+JOBS=8
 USE_CLANG_TRIPLE=1
 
 BUILD_COMMAND=()
@@ -23,7 +24,7 @@ build_defconfig() {
 build_kernel() {
 	local i
 	for i in out/*; do
-		${BUILD_COMMAND[@]} O=$i
+		${BUILD_COMMAND[@]} O=$i -j${JOBS}
 	done
 }
 
